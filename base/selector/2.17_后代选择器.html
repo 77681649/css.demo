@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>后代元素选择器</title>
+  <style>
+    .sidebar {
+      background: blue
+    }
+
+    .sidebar a {
+      color: white;
+    }
+
+    .main {
+      background: #fff;
+    }
+
+    .main a {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <h1>构建目标(Targets)</h1>
+    <a>编辑此页</a>
+  </div>
+  <div class="main">
+    <a>target</a>
+  </div>
+  <p>string | function(compiler) </p>
+  <p>告知 webpack 为目标(target)指定一个环境。</p>
+</body>
+
+</html>

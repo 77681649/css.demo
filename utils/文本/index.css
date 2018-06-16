@@ -1,0 +1,38 @@
+.main {
+  width: 1024px;
+  margin: 20px auto;
+}
+
+.main h1 {
+  text-align: center;
+}
+
+.panel {
+  display: flex;
+
+  margin-top: 20px;
+  padding: 20px;
+
+  background-color: #efefef;
+}
+
+.left-panel {
+  position: relative;
+  width: 300px;
+}
+
+.left-panel .content {
+  display: flex;
+  justify-content: center;
+}
+
+.right-panel {
+  flex: 1;
+  white-space: pre-wrap;
+}
+
+.block {
+  width: 200px;
+  height: 200px;
+  padding:10px;
+}

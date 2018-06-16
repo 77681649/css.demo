@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>2.浮动元素的包含块</title>
+</head>
+
+<body>
+  <h2>块元素包含块</h2>
+  <h2>浮动元素从包含块的内容区开始定位</h2>
+  <h2>所以,浮动元素与包含块的边框相隔10px</h2>
+  <div style="border:solid 1px #efefef;margin:10px;padding:10px;">
+    <div style="float:left;background: red;margin:10px;">float left block</div>
+    <div style="float:right;background: red">float right block</div>
+  </div>
+
+  <h2>行内元素包含块</h2>
+  <h2>浮动元素从包含块的内容区开始定位</h2>
+  <h2>所以,浮动元素与包含块的边框相隔10px</h2>
+  <span style="margin:10px;padding:10px;width:400px">
+    123123<div style="float:left;background: red;width:10px;height:10px;margin:10px;"></div>12312312312312312312312322<br/>
+    3432sjkdfhdskjfhjksdfhjksdhfkjsdhf<br/>
+    jkdsfdsfjxjkasdhfjksdfjksdhfjkds<div style="float:right;background: blue;width:10px;height:10px;"></div>hiuweiuryweuiyrwieury</span>
+</body>
+
+</html>

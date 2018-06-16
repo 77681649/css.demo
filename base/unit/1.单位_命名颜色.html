@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <h1>17种命名颜色</h1>
+  <div id="colors">
+
+  </div>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const colors = ["aqua", " black", " blue", " fuchsia", " gray", " green", " lime", " maroon", " navy", " olive", " orange", " purple", " red", " silver", " teal", " white", "yellow"]
+    const fragment = document.createDocumentFragment();
+
+    colors.forEach(color => {
+      const div = document.createElement("DIV");
+      const style = div.style
+
+      style.backgroundColor = color;
+      style.width = "200px";
+      style.height = "40px";
+      style.fontSize = "16px";
+      style.lineHeight = "40px";
+      style.textAlign = "center";
+
+      div.innerText = color;
+
+
+      fragment.appendChild(div)
+    })
+
+    document.getElementById("colors").appendChild(fragment)
+  })
+</script>
+
+</html>

@@ -1,0 +1,115 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>各种鼠标光标</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      margin: 100px auto;
+      width: 720px;
+      padding: 10px;
+    }
+
+    .blocks {
+      width: calc(100px * 8 + 10px * 7);
+    }
+
+    .block {
+      float: left;
+
+      margin-right: 10px;
+      margin-bottom: 10px;
+      width: 100px;
+      height: 100px;
+
+      background: /* linear-gradient(hsl(0, 0%, 90%), hsl(0, 0%, 90%)),
+      linear-gradient(hsl(0, 0%, 80%), hsl(0, 0%, 80%)),
+      linear-gradient(hsl(0, 0%, 80%), hsl(0, 0%, 80%)),
+      linear-gradient(hsl(0, 0%, 90%), hsl(0, 0%, 90%)); */
+      linear-gradient(45deg,hsl(0, 0%, 90%) 25%,transparent 0),
+      linear-gradient(45deg,transparent 75%, hsl(0, 0%, 90%) 0),
+      linear-gradient(45deg,hsl(0, 0%, 90%) 25%,transparent 0),
+      linear-gradient(45deg,transparent 75%, hsl(0, 0%, 90%) 0);
+
+      background-position: 0 0, 10px 10px , 10px 10px , 20px 20px;
+      background-size: 20px 20px;
+
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <!-- 6 x 6 -->
+    <div class="blocks"></div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let $container = document.querySelector('.blocks')
+      let cursors = [
+        'default',
+        'crosshair',
+        'help',
+        'move',
+        'pointer',
+        'progress',
+        'text',
+        'wait',
+        'e-resize',
+        'ne-resize',
+        'nw-resize',
+        'n-resize',
+        'se-resize',
+        'sw-resize',
+        's-resize',
+        'w-resize',
+        'none',
+        'context-menu',
+        'cell',
+        'vertical-text',
+        'alias',
+        'copy',
+        'no-drop',
+        'not-allowed',
+        'ew-resize',
+        'ns-resize',
+        'nesw-resize',
+        'nwse-resize',
+        'col-resize',
+        'row-resize',
+        'all-scroll',
+        'zoom-in',
+        'zoom-out'
+      ]
+      let fragment = document.createDocumentFragment()
+
+      cursors.forEach(cursor => {
+        let $block = document.createElement('div')
+
+        $block.textContent = cursor
+        $block.className = 'block'
+        $block.addEventListener('mouseover', function () {
+          this.style.cursor = cursor
+        })
+        $block.addEventListener('mouseleave', function () {
+          this.style.cursor = 'default'
+        })
+
+        fragment.appendChild($block)
+      })
+
+      $container.appendChild(fragment)
+    })  
+  </script>
+</body>
+
+</html>

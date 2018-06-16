@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>break-word</title>
+  <link rel="stylesheet" href="/main.css">
+  <style>
+    .normal{
+      word-break: normal;
+    }
+
+    .break-all{
+      word-break: break-all;
+    }
+
+    .break-word{
+      word-break: break-word;
+    }
+
+    .keep-all{
+      word-break: keep-all;
+    }
+
+
+    .container{
+      white-space: pre-line;
+    }
+
+    .box{
+      width: 80px;
+      border:solid 2px black;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>break-word</h1>
+    <div class="container">
+      break-word: normal | break-all | break-word | keep-all
+
+      说明:
+      设置字的断行和字符的换行规则
+    </div>
+
+    <div class="container">
+      word-break: normal
+      
+      说明
+      CJK 字间断行: NO
+      CJK 字符越界换行: YES
+      no CJK 字间断行: NO
+      no CJK 字符越界换行: YES 
+      
+      <div class="box normal">
+        1.啊哈啊哈啊哈
+        2.啊哈啊-哈啊哈
+        3.word-break
+        4.hello!word_break
+      </div>
+    </div>
+
+    <div class="container">
+      word-break: break-all
+      
+      说明
+      CJK 字间断行: NO
+      CJK 字符越界换行: YES
+      no CJK 字间断行: NO
+      no CJK 字符越界换行: YES 
+      字的会被截断: YES
+
+      <div class="box break-all">
+        1.啊哈啊哈啊哈
+        2.啊哈啊-哈啊哈
+        3.word-break
+        4.hello!word_break
+      </div>
+    </div>
+
+    <div class="container">
+      word-break: break-word
+      
+      说明
+      CJK 字间断行: NO
+      CJK 字符越界换行: YES
+      no CJK 字间断行: NO
+      no CJK 字符越界换行: YES 
+      字的会被截断: NO
+
+      <div class="box break-word">
+        1.啊哈啊哈啊哈
+        2.啊哈啊-哈啊哈
+        3.word-break
+        4.hello!word_break
+      </div>
+    </div>
+
+    <div class="container">
+      word-break: keep-all
+      
+      说明
+      CJK 字间断行: YES
+      CJK 字符越界换行: NO
+      no CJK 字间断行: YES
+      no CJK 字符越界换行: NO 
+
+      <div class="box keep-all">
+        1.啊哈啊哈啊哈
+        2.啊哈啊-哈啊哈
+        3.word-break
+        4.hello!word_break
+      </div>
+    </div>
+</body>
+</html>

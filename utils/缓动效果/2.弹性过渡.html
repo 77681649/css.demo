@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>2.弹性过渡</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      position: relative;
+    }
+
+    .form-control label {
+      display: block;
+    }
+
+    .form-control input {
+      width: 180px;
+      padding: 4px;
+    }
+
+    .form-control input:not(:focus)+.callout {
+      transform: scale(0)
+    }
+
+    .form-control input:focus+.callout {
+      transform: scale(1);
+      animation: elastic-grow .5s;
+    }
+
+    .callout {
+      position: absolute;
+      top: 50px;
+      left: 6px;
+      display: inline-block;
+      padding: 6px;
+
+      background: rgb(250, 255, 140);
+
+      /* transition: .5s transform; */
+      transform-origin: 14px -12px;
+    }
+
+    .callout::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      width: 0;
+      height: 0;
+      border: solid 8px transparent;
+      border-bottom-color: rgb(250, 255, 140);
+    }
+
+    @keyframes elastic-grow {
+      from {
+        transform: scale(0)
+      }
+      70% {
+        transform: scale(1.1);
+        /* 放大 */
+        animation-timing-function: cubic-bezier(.1, .25, 1, .25);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="form-control">
+      <label for="username">Your username:</label>
+      <input type="text" id="username" autocomplete="off">
+      <span class="callout">Only letters, numbers, underscore(_) and hyphens ( - ) allowed!</span>
+    </div>
+  </div>
+</body>
+
+</html>

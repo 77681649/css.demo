@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>4.页脚紧贴底部</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      font-size: 48px;
+    }
+
+    .main {
+      box-sizing: border-box;
+      min-height: calc(100vh - 200px); /* min高度 = 视窗高度 - footer高度 */
+    }
+
+    footer {
+      min-height: 200px;
+
+      color: white;
+      background: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="main">
+    <header>What is iTerm2</header>
+    <section>
+      iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS 10.10 or newer. iTerm2 brings
+      the terminal into the modern age with features you never knew you always wanted.Try the FAQ or the documentation. Got
+      problems or ideas? Report them in the bug tracker, take it to the forum, or send me email (gnachman at gmail dot com).
+    </section>
+  </section>
+  <footer>
+    Copyright© 2009-2018 tyosssss
+  </footer>
+</body>
+
+</html>

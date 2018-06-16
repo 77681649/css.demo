@@ -1,0 +1,190 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文字效果</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    /* 现实世界中, 凸起的物体的下方会产生阴影 , 凹进去的底部边缘会被打亮 */
+    /* 浅色背景 + 深色文字: 使用浅色文字投影实现凸版效果 */
+    .letterpress {
+      background-color:hsl(210,13%,60%);
+      text-shadow: 0px 1px 1px hsla(0,0%,100%,.8);
+    }
+
+    .letterpress-deep{
+      color:hsl(210,13%,60%);
+      background-color:hsl(210,13%,40%);
+      text-shadow: 0px 1px 1px black;
+    }
+
+    .stroked-text{
+      background:deeppink;
+      color:white;
+      text-align: center;
+      line-height: 200px;
+      font-size:64px;
+
+      text-shadow: 1px 1px black,
+        -1px -1px black,
+        1px -1px black,
+        -1px 1px black;
+    }
+
+    .glow{
+      background:#203;
+      color:white;
+
+      text-align: center;
+      line-height: 200px;
+      font-size:64px;
+
+      transition: 1s;
+    }
+
+    .glow a:hover{
+      cursor: pointer;
+      /* 利用多重模糊的文字阴影叠加实现 */
+      text-shadow: 
+        0px 0px 4px white,
+        0px 0px 6px white,
+        0px 0px 10px white;
+    }
+
+    .css-text-decor{
+      background:#58a;
+      color:white;
+
+      white-space:nowrap; 
+      text-align: center;
+      line-height: 200px;
+      font-size:32px;
+      
+      /* 叠加垂直向下的阴影 */
+      text-shadow: 
+        0 1px hsl(0,0%,85%),
+        0 2px hsl(0,0%,80%),
+        0 3px hsl(0,0%,75%),
+        0 4px hsl(0,0%,70%),
+        0 5px hsl(0,0%,65%),
+        0 6px hsl(0,0%,60%);
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>CSS 各种文字效果</h1>
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block letterpress">The only way to get rid of a temptation is to yield to it.</div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        凸版印刷效果:
+
+        /* 现实世界中, 凸起的物体的下方会产生阴影 , 凹进去的底部边缘会被打亮 */
+        /* 浅色背景 + 深色文字: 使用浅色文字投影实现凸版效果 */
+        .letterpress {
+          background-color:hsl(210,13%,60%);
+          text-shadow: 0px 1px 1px hsla(0,0%,100%,.8);
+        }
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block letterpress-deep">The only way to get rid of a temptation is to yield to it.</div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        凸版印刷效果:
+
+        /* 现实世界中, 凸起的物体的下方会产生阴影 , 凹进去的底部边缘会被打亮 */
+        /* 深色背景 + 浅色文字: 使用深色文字投影实现凸版效果 */
+        .letterpress-deep{
+          color:hsl(210,13%,60%);
+          background-color:hsl(210,13%,40%);
+          text-shadow: 0px 1px 1px black;
+        }
+      </div>
+    </div>
+    
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block stroked-text">CSS</div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        空心文字效果:
+
+        .stroked-text{
+          background:deeppink;
+          color:white;
+          text-align: center;
+          line-height: 200px;
+          font-size:64px;
+    
+          text-shadow: 1px 1px black,
+            -1px -1px black,
+            1px -1px black,
+            -1px 1px black;
+        }
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block glow"><a>Dizzy</a></div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        文字外发光效果:
+
+        .glow{
+          background:#203;
+          color:white;
+    
+          text-align: center;
+          line-height: 200px;
+          font-size:64px;
+    
+          transition: 1s;
+        }
+    
+        .glow a:hover{
+          cursor: pointer;
+          /* 利用多重模糊的文字阴影叠加实现 */
+          text-shadow: 
+            0px 0px 4px white,
+            0px 0px 6px white,
+            0px 0px 10px white;
+        }
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block css-text-decor">CSS 3d.</div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        文字凸起效果:
+
+        /* 现实世界中, 凸起的物体的下方会产生阴影 , 凹进去的底部边缘会被打亮 */
+        /* 深色背景 + 浅色文字: 使用深色文字投影实现凸版效果 */
+        .letterpress-deep{
+          color:hsl(210,13%,60%);
+          background-color:hsl(210,13%,40%);
+          text-shadow: 0px 1px 1px black;
+        }
+      </div>
+    </div>
+  </div>
+</body>
+</html>

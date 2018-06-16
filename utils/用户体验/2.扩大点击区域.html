@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>扩大点击区域</title>
+  <style>
+    .icon-button {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+
+      background: #58a;
+      color: white;
+      text-align: center;
+      line-height: 30px;
+
+      /* 透明的border 扩大点击区域 */
+      border: 10px solid transparent;
+
+      /* 模拟边框 */
+      box-shadow: 0px 0px 1px black inset;
+
+      /* 避免border撑大元素 */
+      background-clip: padding-box;
+
+      transition: 300ms;
+    }
+
+    .icon-button:hover {
+      transform: scale(1.2)
+    }
+
+    .circle {
+      border-radius: 50% 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="icon-button circle">+</div>
+  </div>
+</body>
+
+</html>

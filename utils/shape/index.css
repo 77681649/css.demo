@@ -1,0 +1,142 @@
+.main {
+  width: 1024px;
+  margin: 20px auto;
+}
+
+.main h1 {
+  text-align: center;
+}
+
+.panel {
+  display: flex;
+
+  margin-top: 20px;
+  padding: 20px;
+
+  background-color: #efefef;
+}
+
+.left-panel {
+  position: relative;
+  width: 300px;
+}
+
+.left-panel .content {
+  display: flex;
+  justify-content: center;
+}
+
+.right-panel {
+  flex: 1;
+  white-space: pre-wrap;
+}
+
+.shape {
+  width: 100px;
+  height: 100px;
+
+  background: #fb3;
+}
+
+.ellipse {
+  border-radius: 50%;
+}
+
+.half-ellipse {
+  /* 水平: 50% */
+  /* 垂直: top-left,top-right:100% , bottom-left,bottom-right:0 */
+  border-radius: 50%/100% 100% 0 0;
+}
+
+.quarter-ellipse {
+  border-radius: 100% 0 0/100% 0 0;
+}
+
+.parallelograms {
+  position: relative;
+  background: none;
+  z-index: 0;
+}
+
+.parallelograms::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background: #fb3;
+  transform: skewX(-45deg);
+}
+
+.diamond {
+  transform: rotateZ(-45deg);
+}
+
+.diamond-image {
+  background: none;
+
+  /* 形成菱形 */
+  transform: rotateZ(45deg);
+
+  /* 避免图片超出容器 */
+  overflow: hidden;
+}
+
+.diamond-image > img {
+  /* 限制图片尺寸不要超过容器 */
+  max-width: 100%;
+
+  /* 图片旋转角度复原 */
+  /* 缩放,让图片填满整个菱形(只有图片的宽度是菱形的对角线长度时,才能填满)*/
+  transform: rotateZ(-45deg) scale(1.4);
+}
+
+.bevel-corners-bottom-right {
+  /* 从右下角到左上角的渐变色 */
+  /* 高为15px的三角形折角 */
+  background: linear-gradient(-45deg, transparent 15px, #fb3 0);
+}
+
+.bevel-corners-bottom {
+  /* 使用两个渐变色(两张图片实现) */
+  /* 从右下角到左上角的渐变色 , 高为15px的三角形折角 */
+  background: linear-gradient(-45deg, transparent 15px, #fb3 0) right,
+    linear-gradient(45deg, transparent 15px, #fb3 0) left;
+
+  background-size: 50% 100%; /* 宽度为50% , 两张图片各占一般宽度 */
+  background-repeat: no-repeat; /* 避免平铺,覆盖其他图片 */
+}
+
+.trapezoid {
+  z-index: 0;
+
+  position: relative;
+  height: 50px;
+  color: white;
+  background: transparent;
+  text-align: center;
+  line-height: 50px;
+}
+
+.trapezoid::before {
+  content: "";
+  z-index: -1;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background: #fb3;
+
+  /* 从底部开始变形 , 保证底部不变 */
+  transform-origin: bottom;
+
+  /* 旋转透视 */
+  /* 使用scaleY不足由于拉伸缺失的高度 */
+  transform: scaleY(1.5) perspective(0.5em) rotateX(5deg);
+}

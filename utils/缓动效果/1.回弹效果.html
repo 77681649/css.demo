@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>回弹效果</title>
+  <style>
+    .ball {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(at 30px 30px, hsl(0, 0%, 100%) 1px, red 50%);
+      border-radius: 50% 50%;
+
+      animation: bounce 1s ease-in;
+    }
+
+    @keyframes bounce {
+      60%,
+      80%,
+      to {
+        transform: translateY(350px);
+        animation-timing-function: ease-out;
+      }
+
+      70% {
+        transform: translateY(250px);
+      }
+
+      90% {
+        transform: translateY(300px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="ball"></div>
+  </div>
+</body>
+
+</html>

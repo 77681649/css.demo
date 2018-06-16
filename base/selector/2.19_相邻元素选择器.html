@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>相邻元素选择器</title>
+  <style>
+    h1+p {
+      color: red;
+    }
+
+    /* 选择 h1后面的所有兄弟节点 */
+
+    h1~p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <h1>target</h1>
+    <p>string
+      <a>function(compiler)</a>
+    </p>
+    <p>告知 webpack 为目标(target)指定一个环境。</p>
+  </div>
+</body>
+
+</html>

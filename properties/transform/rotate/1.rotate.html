@@ -1,0 +1,151 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>rotate</title>
+  <style>
+    .main {
+      margin: 0 auto;
+      padding: 40px;
+      width: 720px;
+    }
+
+    .scene {
+      position: relative;
+      width: 600px;
+      height: 600px;
+    }
+
+    .block {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+
+      width: 100px;
+      height: 100px;
+      background: red;
+      border: solid 1px #000;
+      backface-visibility: hidden;
+      transition: transform 500ms ease 0ms;
+    }
+
+
+
+    .block:hover {}
+
+    .form-control label {
+      display: inline-block;
+      width: 200px;
+      text-align: justify;
+      text-align-last: justify;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="scene" id="scene">
+      <div id="block" class="block"></div>
+    </div>
+    <div id="buttons" class="buttons">
+      <button>rotateX(45deg)</button>
+      <button>rotateX(-45deg)</button>
+      <button>rotateY(45deg)</button>
+      <button>rotateY(-45deg)</button>
+      <button>rotateZ(45deg)</button>
+      <button>rotateZ(-45deg)</button>
+      <button>reset</button>
+    </div>
+    <div class="form">
+      <div class="form-control">
+        <label for="perspective">perspective: </label>
+        <input id="perspective" type="range" min="0" max="600">
+        <label id="perspective-value"></label>
+      </div>
+
+      <div class="form-control">
+        <label for="perspective-origin-x">perspective-origin-x: </label>
+        <input id="perspective-origin-x" type="range" min="0" max="100">
+        <label id="perspective-origin-x-value"></label>
+      </div>
+
+      <div class="form-control">
+        <label for="perspective-origin-y">perspective-origin-y: </label>
+        <input id="perspective-origin-y" type="range" min="0" max="100">
+        <label id="perspective-origin-y-value"></label>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const $scene = document.getElementById('scene')
+      const $block = document.getElementById('block')
+
+      document.getElementById('perspective').value = 200
+      document.getElementById('perspective-value').innerText = '200px'
+      updatePerspective(200)
+
+      document.getElementById('perspective-origin-x').value = 50
+      document.getElementById('perspective-origin-x-value').innerText = '50%'
+      updatePerspectiveOriginX(50)
+
+      document.getElementById('perspective-origin-y').value = 50
+      document.getElementById('perspective-origin-y-value').innerText = '50%'
+      updatePerspectiveOriginY(50)
+
+      document.getElementById('buttons').addEventListener('click', function (e) {
+
+        $block.style.transform = e.target.innerText === 'reset'
+          ? ''
+          : e.target.innerText
+      })
+
+      document.getElementById('perspective').addEventListener('change', function () {
+        updatePerspective(this.value)
+        document.getElementById('perspective-value').innerText = this.value + 'px'
+      })
+
+      document.getElementById('perspective-origin-x').addEventListener('change', function () {
+        updatePerspectiveOriginX(this.value)
+        document.getElementById('perspective-origin-x-value').innerText = this.value + '%'
+      })
+
+      document.getElementById('perspective-origin-y').addEventListener('change', function () {
+        updatePerspectiveOriginY(this.value)
+        document.getElementById('perspective-origin-y-value').innerText = this.value + '%'
+      })
+
+      function updatePerspective(value) {
+        $scene.style.perspective = value + 'px'
+      }
+
+      function updatePerspectiveOriginX(value) {
+        updatePerspectiveOrigin(value + '%')
+      }
+
+      function updatePerspectiveOriginY(value) {
+        updatePerspectiveOrigin(null, value + '%')
+      }
+
+      function updatePerspectiveOrigin(x, y) {
+        let perspectiveOrigin = $scene.style.perspectiveOrigin
+
+        if (perspectiveOrigin) {
+          if (x) perspectiveOrigin = perspectiveOrigin.replace(/\d+%/, x)
+          if (y) perspectiveOrigin = perspectiveOrigin.replace(/\s\d+%/, ' ' + y)
+        } else {
+          x && y && (perspectiveOrigin = x + ' ' + y)
+          x && (perspectiveOrigin = x + ' ' + x)
+          y && (perspectiveOrigin = y + ' ' + y)
+        }
+
+        $scene.style.perspectiveOrigin = perspectiveOrigin
+      }
+    })
+  </script>
+</body>
+
+</html>

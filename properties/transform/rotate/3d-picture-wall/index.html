@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3D 照片墙</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body ondragstart="return false"> 
+  <div class="main">
+    <div class="scene">
+      <div class="container">
+        <img src="pics/1.jpeg" alt="1.jpeg" style="transform:rotateY(0deg) translateZ(309.7981935563698px)" />
+        <img src="pics/2.jpeg" alt="2.jpeg" style="transform:rotateY(40deg) translateZ(309.7981935563698px)" />
+        <img src="pics/3.jpeg" alt="3.jpeg" style="transform:rotateY(80deg) translateZ(309.7981935563698px)" />
+        <img src="pics/4.jpeg" alt="4.jpeg" style="transform:rotateY(120deg) translateZ(309.7981935563698px)" />
+        <img src="pics/5.jpeg" alt="5.jpeg" style="transform:rotateY(160deg) translateZ(309.7981935563698px)" />
+        <img src="pics/6.jpeg" alt="6.jpeg" style="transform:rotateY(200deg) translateZ(309.7981935563698px)" />
+        <img src="pics/7.jpeg" alt="7.jpeg" style="transform:rotateY(240deg) translateZ(309.7981935563698px)" />
+        <img src="pics/8.jpeg" alt="8.jpeg" style="transform:rotateY(280deg) translateZ(309.7981935563698px)" />
+        <img src="pics/9.jpeg" alt="9.jpeg" style="transform:rotateY(320deg) translateZ(309.7981935563698px)" />
+      </div>
+    </div>
+  </div>
+  <script src="/zepto.js"></script>
+  <script>
+    $(function () {
+      let deg = 0
+
+      $('.container').on('click', function () {
+        deg -= 40
+        this.style.transform = `rotateY(${deg}deg)`
+      })
+    })
+  </script>
+</body>
+
+</html>

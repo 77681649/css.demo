@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1.skew</title>
+  <style>
+    .main {
+      width: 1024px;
+      margin: 100 auto;
+      padding: 20px;
+    }
+
+    .block {
+      position: relative;
+      margin-top: 100px;
+      width: 100px;
+      height: 100px;
+
+      border: dashed 1px black;
+    }
+
+    .block::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      background: #f9f;
+    }
+
+    .skewX_30::before {
+      transform: skewX(30deg)
+    }
+
+    .skewX_-30::before {
+      transform: skewX(-30deg)
+    }
+
+    .skewY_30::before {
+      transform: skewY(30deg)
+    }
+
+    .skewY_-30::before {
+      transform: skewY(-30deg)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="block skewX_30">skewX(30deg)</div>
+    <div class="block skewX_-30">skewX(-30deg)</div>
+    <div class="block skewY_30">skewY(30deg)></div>
+    <div class="block skewY_-30">skewY(-30deg)></div>
+  </div>
+</body>
+
+</html>

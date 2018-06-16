@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transform.origin</title>
+  <style>
+    .main {
+      display: flex
+    }
+
+    .left {
+      padding: 20px;
+      width: 400px;
+    }
+
+    .right {
+      flex: 1
+    }
+
+    .block {
+      width: 100px;
+      height: 100px;
+      background: pink;
+      border: solid 1px #000;
+
+      transition-duration: 1000ms;
+      transition-property: transform
+    }
+
+    .block:hover {
+      transform: rotateZ(90deg)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="left">
+      <div id="message"></div>
+      <div id="x-axis" class="controls">
+        <h4>X轴</h4>
+        <button>left</button>
+        <button>center</button>
+        <button>right</button>
+      </div>
+
+      <div id="y-axis" class="controls">
+        <h4>Y轴</h4>
+        <button>top</button>
+        <button>center</button>
+        <button>bottom</button>
+      </div>
+    </div>
+    <div class="right">
+      <h4>rotateX 90deg</h4>
+      <div class="scene">
+        <div id="block" class="block"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let $message = document.getElementById('message')
+      let $block = document.getElementById('block')
+      let xAxis = 'center'
+      let yAxis = 'center'
+      
+      document.querySelectorAll('#x-axis button').forEach(button => {
+        button.addEventListener('click', function () {
+          changeTransformOrigin('x', this.innerText)
+        })
+      })
+
+      document.querySelectorAll('#y-axis button').forEach(button => {
+        button.addEventListener('click', function () {
+          changeTransformOrigin('y', this.innerText)
+        })
+      })
+
+      updateText()
+
+      function changeTransformOrigin(type, value) {
+        if (type == 'x') {
+          xAxis = value
+        } else {
+          yAxis = value
+        }
+
+        updateTransformOrigin()
+        updateText()
+      }
+
+      function updateTransformOrigin(){
+        $block.style.transformOrigin = `${xAxis} ${yAxis}`
+      }
+
+      function updateText(){
+        $message.innerText = `transform-origin: ${xAxis} ${yAxis}`
+      }
+    })
+  </script>
+</body>
+
+</html>

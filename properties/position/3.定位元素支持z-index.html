@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .block {
+      height: 100px;
+      width: 100px;
+      margin: 10px;
+    }
+
+    .red {
+      background: red
+    }
+
+    .blue {
+      background: blue
+    }
+
+    .green {
+      background: green
+    }
+
+    .absolute {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h3>非定位元素</h3>
+    <div>
+      <div class="block red" style="z-index:1"></div>
+      <div class="block blue" style="z-index:2"></div>
+      <div class="block green" style="z-index:3"></div>
+    </div>
+
+    <h3>定位元素</h3>
+    <div style="position: relative">
+      <div class="block red absolute" style="z-index:1"></div>
+      <div class="block blue absolute" style="z-index:2;left:10px;top:10px"></div>
+      <div class="block green absolute" style="z-index:3;left:20px;top:20px;"></div>
+    </div>
+  </div>
+  <div></div>
+</body>
+
+</html>

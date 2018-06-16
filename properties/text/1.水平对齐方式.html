@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo.font.weight</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0px
+    }
+
+    .main {
+      border: solid 1px #aaa;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .extra-line ::after {
+      content: '';
+      overflow: hidden;
+      width: 100%;
+      display: inline-block;
+      height: 0;
+    }
+
+    .text-align-l {
+      text-align: left
+    }
+
+    .text-align-r {
+      text-align: right
+    }
+
+    .text-align-c {
+      text-align: center
+    }
+
+    .text-align-s {
+      text-align: start
+    }
+
+    .text-align-e {
+      text-align: end
+    }
+
+    .text-align-justify {
+      text-align: justify;
+      width: 335px;
+    }
+
+    .inline-block-container span {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main" class="main">
+    <h1>块内文本:</h1>
+    <p class="text-align-l">本段文字是对齐方式: left</p>
+    <p class="text-align-c">本段文字是对齐方式: center</p>
+    <p class="text-align-r">本段文字是对齐方式: right</p>
+    <p class="text-align-s">本段文字的对齐方式: start</p>
+    <p class="text-align-e">本段文字的对齐方式: end</p>
+    <p class="text-align-justify">text align of the text: justify.text align of the text: justify.text align of the text: justify.text align of the text:
+      justify
+    </p>
+  </div>
+  <div id="main" class="main">
+    <h1>块内行内元素:</h1>
+    <p class="text-align-l">
+      <span>1:left</span>
+      <span>2:left</span>
+      <span>3:left</span>
+    </p>
+    <p class="text-align-c">
+      <span>1:center</span>
+      <span>2:center</span>
+      <span>3:center</span>
+    </p>
+    <p class="text-align-r">
+      <span>1:right</span>
+      <span>2:right</span>
+      <span>3:right</span>
+    </p>
+    <p class="text-align-s">
+      <span>1:start</span>
+      <span>2:start</span>
+      <span>3:start</span>
+    </p>
+    <p class="text-align-e">
+      <span>1:end</span>
+      <span></span>2:end</span>
+      <span>3:end</span>
+    </p>
+    <p class="text-align-justify">
+      <span>1:justify</span>
+      <span>2:justify</span>
+      <span class="extra-line">3:justify</span>
+    </p>
+  </div>
+
+  <div id=" main " class="main inline-block-container ">
+    <h1>块内inline-block 元素:</h1>
+    <p class="text-align-l ">
+      <span>1:left</span>
+      <span>2:left</span>
+      <span>3:left</span>
+    </p>
+    <p class="text-align-c ">
+      <span>1:center</span>
+      <span>2:center</span>
+      <span>3:center</span>
+    </p>
+    <p class="text-align-r ">
+      <span>1:right</span>
+      <span>2:right</span>
+      <span>3:right</span>
+    </p>
+    <p class="text-align-s ">
+      <span>1:start</span>
+      <span>2:start</span>
+      <span>3:start</span>
+    </p>
+    <p class="text-align-e ">
+      <span>1:end</span>
+      <span></span>2:end</span>
+      <span>3:end</span>
+    </p>
+    <p class="text-align-justify ">
+      <span>1:justify</span>
+      <span>2:justify</span>
+      <span class="extra-line">3:justify</span>
+    </p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>伪类选择器 nth-last-child</title>
+  <style>
+    .grid div::before,
+    .grid div::after,
+    .grid span::before,
+    .grid span::after {
+      content: "wahaha";
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>::first-letter 只对块级元素有效</h1>
+  <div class="grid">
+    <div>
+      <p>This "div" is block element.</p>
+      <p>Wahahah.</p>
+    </div>
+    <span>This "span" is inline element.</span>
+    <span style="display:block">This "span" is block element.</span>
+    <span style="display:inline-block">This "span" is inline-block element.</span>
+  </div>
+</body>
+
+</html>

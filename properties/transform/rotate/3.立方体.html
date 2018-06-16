@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>立方体</title>
+  <style>
+    .scene {
+      width:1280px;
+      margin:200px auto;
+      
+      perspective: 1200px;
+      perspective-origin: 10% 50%;
+      backface-visibility: visible;
+    }
+
+    .cube {
+      position: relative;
+      transform-style: preserve-3d;
+      width: 200px;
+      height: 200px;
+
+      animation: example 10s linear infinite;
+    }
+
+    .cube-side {
+      position: absolute;
+
+      width: 200px;
+      height: 200px;
+      border: 5px solid #9aa;
+
+      color: white;
+      text-align: center;
+      font-size: 22px;
+      line-height: 200px;
+    }
+
+    .cube-side.back {
+      transform: translateZ(-100px);
+      background: sienna;
+    }
+
+    .cube-side.left {
+      transform: translateX(-100px) rotateY(90deg);
+      background: steelblue;
+    }
+
+    .cube-side.right {
+      transform: translateX(100px) rotateY(90deg);
+      background: turquoise;
+    }
+
+    .cube-side.top {
+      transform: translateY(-100px) rotateX(90deg);
+      background: red;
+    }
+
+    .cube-side.bottom {
+      transform: translateY(100px) rotateX(90deg);
+      background: royalblue;
+    }
+
+    .cube-side.front {
+      transform: translateZ(100px);
+      background: lime;
+    }
+
+    @keyframes example {
+      100% { transform: rotateX(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scene">
+    <div class="cube">
+      <div class="cube-side back">back</div>
+      <div class="cube-side left">left</div>
+      <div class="cube-side right">right</div>
+      <div class="cube-side top">top</div>
+      <div class="cube-side bottom">bottom</div>
+      <div class="cube-side front">front</div>
+    </div>
+  </div>
+</body>
+
+</html>

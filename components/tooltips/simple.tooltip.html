@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tooltips</title>
+  <style>
+    .tooltips {
+      position: absolute;
+      padding: 6px 10px;
+
+      background: #88ff;
+      color: #fff;
+
+      top: 36px;
+      left: 20px;
+    }
+
+    .tooltips::before {
+      content: '';
+      background: transparent;
+      border-style: solid;
+      border-color: #88ff transparent;
+      border-width: 0px 6px 6px;
+      position: relative;
+      width: 0;
+      height: 0;
+      display: block;
+
+      top: -11px;
+    }
+  </style>
+</head>
+
+<body>
+  <input id="input" type="text" placeholder="please input">
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    class Tooltips {
+      constructor(options) {
+        options = options || {}
+
+        this.options = options
+        this.$target = options.target
+        this.content = options.content
+
+        this.created = false
+      }
+
+      create() {
+        const $el = this.$el = document.createElement('DIV')
+
+        $el.innerHTML = this.content
+        $el.className = 'tooltips'
+        $el.style.display = 'none'
+
+        this.render()
+        this.created = true
+      }
+
+      render() {
+        const $target = this.$target
+        const $parent = $target.parentElement
+        const $nextSibling = $target.nextSibling
+
+        $target.style.position = 'relative'
+
+        if ($parent) {
+          if ($nextSibling) {
+            $parent.insertBefore(this.$el, $nextSibling)
+          } else {
+            $parent.appendChild(this.$el)
+          }
+        }
+      }
+
+      show() {
+        if (!this.created) {
+          this.create()
+          this.render()
+        }
+
+        this.$el.style.display = 'block'
+      }
+
+      hide() {
+        this.$el.style.display = 'none'
+      }
+    }
+
+    let timer = null
+    let $input = document.querySelector('input')
+    let tooltips = new Tooltips({
+      target: $input,
+      content: 'Please input number.'
+    })
+
+    $input.addEventListener('focus', function () {
+      tooltips.show()
+
+      clearTimeout(timer)
+      timer = setTimeout(function () {
+        tooltips.hide()
+      }, 3000)
+    })
+
+    $input.addEventListener('blur', function () {
+      tooltips.hide()
+      clearTimeout(timer)
+    })
+  })
+</script>
+
+</html>

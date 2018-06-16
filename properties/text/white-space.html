@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>white-space</title>
+  <link rel="stylesheet" href="/main.css">
+  <style>
+    .normal{
+      white-space: normal;
+    }
+
+    .nowrap{
+      white-space: nowrap;
+    }
+
+    .pre-line{
+      white-space: pre-line;
+    }
+
+    .pre-wrap{
+      white-space: pre-wrap;
+    }
+
+    .pre{
+      white-space: pre;
+    }
+    
+    .container{
+      white-space: pre-line;
+    }
+
+    .box{
+      width: 80px;
+      border:solid 2px black;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>white-space</h1>
+    <div class="container">
+      white-space: normal | pre | nowrap | pre-wrap | pre-line
+
+      说明:
+      设置处理元素中的空白( 空格 , 换行符 ) 的方式
+    </div>
+
+    <div class="container">
+      white-space: normal
+      
+      说明:
+      连续空格: 合并
+      符号换行: YES
+      文字换行: YES 基于 break-word
+      
+      <div class="box normal">
+            哈哈哈哈哈哈哈哈哈
+            whitespacesss
+            white-space
+      </div>
+    </div>
+
+    <div class="container">
+      white-space: nowrap
+      
+      说明:
+      连续空格: 合并
+      符号换行: NO
+      文字换行: NO
+      
+      <div class="box nowrap">
+            哈哈哈哈哈哈哈哈哈
+            whitespacesss
+            white-space
+      </div>
+    </div>
+
+    <div class="container">
+      white-space: pre
+      
+      说明:
+      连续空格: 原样输出
+      符号换行: YES
+      文字换行: NO
+      
+      <div class="box pre">
+            哈哈哈哈哈哈哈哈哈
+            whitespacesss
+            white-space
+      </div>
+    </div>
+
+    <div class="container">
+      white-space: pre-wrap
+      
+      说明:
+      连续空格: 原样输出
+      符号换行: YES
+      文字换行: YES
+      
+      <div class="box pre-wrap">
+            哈哈哈哈哈哈哈哈哈
+            whitespacesss
+            white-space
+      </div>
+    </div>
+
+    <div class="container">
+        white-space: pre-line
+        
+        说明:
+        连续空格: 合并
+        符号换行: YES
+        文字换行: YES
+        
+        <div class="box pre-line">
+              哈哈哈哈哈哈哈哈哈
+              whitespacesss
+              white-space
+        </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>毛玻璃效果</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    body,
+    .main::before {
+      background: url('bg.jpeg') no-repeat fixed;
+      background-size: cover;
+    }
+    
+    .main {
+      width: 448px;
+      height: 224px;
+      padding: 30px 40px;
+
+      font-size: 28px;
+      line-height: 2;
+      text-align: center;
+
+      box-shadow: 4px 4px 10px rgb(0, 0, 0, .5);
+      border-radius: 4px;
+
+      /* 裁剪超出元素的模糊区域 */
+      overflow: hidden;
+    }
+
+    .main::before {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      margin: -30px;
+
+      filter: blur(10px);
+      z-index: -1;
+    }
+
+    .xy-center {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      margin-top: -142px;
+      margin-left: -264px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main xy-center">
+    <p>人生若只如初见，何事秋风悲画扇。</p>
+    <p>等闲变却故人心，却道故人心易变。</p>
+    <p>骊山语罢清宵半，泪雨零铃终不怨。</p>
+    <p>何如薄幸锦衣郎，比翼连枝当日愿。</p>
+  </div>
+</body>
+
+</html>

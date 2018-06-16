@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>width: auto</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .main {
+      margin: 40px auto;
+      width: 80%;
+    }
+  
+    .container {
+      padding: 10px 10px;
+      background: silver;
+
+      /* 产生BFC */
+      overflow: hidden;
+    }
+
+    .block {
+
+      position: relative;
+      margin: 20px 10px;
+      padding:0 10px;
+      height: 200px;
+
+      background: rosybrown;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="block" style="margin-left:300px;width:300px;margin-right:300px;">
+        效果: margin-right 自动设置为auto, 铺满剩余水平空间
+        
+        position: static/relative; 
+        margin-left:300px; 
+        width: 300px;
+        margin-right:300px;
+      </div>
+           
+      <div class="block" style="margin-left:auto;width:300px;margin-right:auto;">
+          position: static/relative; 
+          margin-left:auto; 
+          width: 300px;
+          margin-right:auto;
+
+          效果: 元素居中
+      </div>
+
+      <div class="block" style="margin-left:300px;width:auto;margin-right:auto;">
+          position: static/relative; 
+          margin-left:300px; 
+          width: auto;
+          margin-right:auto;
+
+          效果: 元素向右拉伸占满剩余水平空间
+      </div>
+
+      <div class="block" style="margin-left:auto;width:auto;margin-right:300px;">
+          position: static/relative; 
+          margin-left:auto; 
+          width: auto;
+          margin-right:300px;
+
+          效果: 元素的宽度为剩余水平内容区
+      </div>
+
+      <div class="block" style="margin-left:300px;width:auto;margin-right:300px;">
+          position: static/relative; 
+          margin-left:300px; 
+          width: auto;
+          margin-right:300px;
+
+          效果: 元素向左拉伸占满剩余水平空间
+      </div>
+
+      <div class="block" style="margin-left:auto;width:auto;margin-right:auto;">
+          position: static/relative; 
+          margin-left:auto; 
+          width: auto;
+          margin-right:auto;
+
+          效果: 占满整个水平内容区
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

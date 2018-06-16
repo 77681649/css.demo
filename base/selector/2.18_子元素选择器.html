@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>子元素选择器</title>
+  <style>
+    .main>span {
+      color: red;
+    }
+
+    .main>p {
+      background: blue;
+    }
+
+    .main>a {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <a>target</a>
+    <span>string |
+      <a>function(compiler)</a>
+    </span>
+    <p>告知 webpack 为目标(target)指定一个环境。</p>
+  </div>
+</body>
+
+</html>

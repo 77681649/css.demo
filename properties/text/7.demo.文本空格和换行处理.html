@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>文本空格和换行处理 DEMO</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="margin:20px;width: 260px;border:solid 1px #aaa">
+    <p style="white-space: normal">
+      这段文 字是 测试 word-space:normal.
+      (合并空格)
+    </p>
+    <p style="white-space: pre">
+      这段文    字是   测试word-space:pre
+      (原样输出,不换行)
+    </p>
+    <p style="white-space: nowrap">
+        这段文    字是   测试word-space:nowrap
+        (合并空格,不换行)
+      </p>
+    <p style="white-space: pre-wrap">
+        这段文    字是   测试word-space:pre-wrap
+        (原样输出,保留换行换行)
+    </p>
+    <p style="white-space: pre-line">
+        这段文    字是   测试word-space:pre-line
+        (原样输出,换行)
+    </p>
+  </div>
+
+  <div style="margin:20px;width: 260px;border:solid 1px #aaa">
+      <p>word-break: normal</p>
+      <p style="word-break: normal">
+        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        <p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+        <p>bbbbbbbbbb-bbbbbbbbbbbbbbbbbbbbbbbbb</p>
+        <p>哈哈哈哈哈哈哈-哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+        <p>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+      </p>
+      <p>word-break: keep-all</p>
+      <p>
+          <p style="word-break: keep-all">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+          <p style="word-break: keep-all">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+          <p style="word-break: keep-all">bbbbbbbbbb-bbbbbbbbbbbbbbbbbbbbbbbbb</p>
+          <p style="word-break: keep-all">哈哈哈哈哈哈-哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+          <p style="word-break: keep-all">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+      </p>
+      <p>word-break: break-all</p>
+      <p>
+          <p style="word-break: break-all">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+          <p style="word-break: break-all">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+          <p style="word-break: break-all">bbbbbbbbbb-bbbbbbbbbbbbbbbbbbbbbbbbb</p>
+          <p style="word-break: break-all">哈哈哈哈哈哈-哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+          <p style="word-break: break-all">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+      </p>
+      <p>word-break: break-word</p>
+      <p>
+          <p style="word-break: break-word">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+          <p style="word-break: break-word">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+          <p style="word-break: break-word">bbbbbbbbbb-bbbbbbbbbbbbbbbbbbbbbbbbb</p>
+          <p style="word-break: break-word">哈哈哈哈哈哈-哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+          <p style="word-break: break-word">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+      </p>
+  </div>
+</body>
+
+</html>

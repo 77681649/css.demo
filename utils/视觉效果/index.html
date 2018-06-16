@@ -1,0 +1,159 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS3 各种阴影</title>
+  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="/zepto.js"></script>
+</head>
+
+<body>
+  <div class="main">
+    <h1>CSS3 各种阴影</h1>
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block normal-box-shadow"></div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        普通边框阴影:
+
+        .normal-box-shadow {
+          box-shadow: 0px 0px 4px rgb(0, 0, 0, 0.5);
+        }
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block box-shadow-2-sides"></div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        邻边边框阴影:
+
+        .box-shadow-2-sides{
+          box-shadow: 2px 2px 4px  rgb(0, 0, 0, 0.5);
+        }
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block box-shadow-1-sides"></div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        单边边框阴影:
+
+        .box-shadow-1-sides{
+          /* 将水平的阴影缩小到与元素尺寸一致 */
+          /* 垂直偏移比模糊半径大 , 底部实际阴影尺寸为2px ( 6 + 4 - 8 = 2 ) */  
+          box-shadow: 0px 6px 4px -4px rgb(0, 0, 0, 0.5)
+        }
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block box-shadow-opposite-sides"></div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        双侧边框阴影:
+
+        .box-shadow-opposite-sides {
+          box-shadow: 4px 0px 4px -4px rgb(0, 0, 0, 0.5),
+            -4px 0px 4px -4px rgb(0, 0, 0, 0.5);
+        }
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block drop-shadow"></div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        不规则边框阴影:
+
+        .drop-shadow {
+          position: relative;
+          filter: drop-shadow(0px 0px 4px rgb(0, 0, 0, 0.5));
+          border-radius: 2px 2px;
+        }
+        
+        .drop-shadow::after {
+          content: "";
+        
+          position: absolute;
+          top: 10px;
+          right: -20px;
+        
+          display: block;
+          width: 0;
+          height: 0;
+          border: solid 10px transparent;
+          border-left-color: #fb3;
+          /* border-right: transparent; */
+        }
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block folded-corner"></div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        折角效果:
+
+        .folded-corner {
+          position: relative;
+        
+          background: none;
+          
+          /* 切角效果: -145 线性渐变 */
+          /* 三角形: 通过三角函数计算出尺寸 让切角和三角形的尺寸一致 , 以便三角形和切角重合 */
+          background: 
+            linear-gradient(45deg, rgba(0,0,0,.4) 50%, transparent 0) no-repeat 100% 0 / 14px 14px,
+            linear-gradient(-135deg, transparent 9.899494936611665px, #58a 0);
+        }
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="left-panel">
+        <div class="content">
+            <div class="block folded-corner-realisitc"></div>
+        </div> 
+      </div>
+      <div class="right-panel">
+        折角效果:
+
+        .folded-corner {
+          position: relative;
+        
+          background: none;
+          
+          /* 切角效果: -145 线性渐变 */
+          /* 三角形: 通过三角函数计算出尺寸 让切角和三角形的尺寸一致 , 以便三角形和切角重合 */
+          background: 
+            linear-gradient(45deg, rgba(0,0,0,.4) 50%, transparent 0) no-repeat 100% 0 / 14px 14px,
+            linear-gradient(-135deg, transparent 9.899494936611665px, #58a 0);
+        }
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

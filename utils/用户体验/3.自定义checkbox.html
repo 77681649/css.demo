@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3.自定义checkbox</title>
+  <style>
+    html {
+      font-size: 16px;
+    }
+
+    .checkbox {
+      user-select: none;
+    }
+
+    /* display:none 会失去tab顺序 */
+
+    .checkbox .raw {
+      position: absolute;
+      /* 移除正常文档流 */
+      clip: rect(0, 0, 0, 0);
+    }
+
+    .checkbox .raw+label::before {
+      content: '\a0';
+      display: inline-block;
+
+      margin-right: 3px;
+      padding: 1px;
+      width: 1em;
+      height: 1em;
+
+      text-indent: 3px;
+      line-height: 16px;
+
+      background: silver;
+      background-origin: content-box;
+      border-radius: 2px;
+    }
+    
+    /* 伪类 + 伪元素 实现不同状态的样式变化 */
+    .checkbox .raw:checked+label::before {
+      content: '\2713';
+      background: yellowgreen;
+    }
+
+    .checkbox .raw:checked+label::before {
+      box-shadow: 2px 2px 2px #58a;
+    }
+
+    .checkbox .raw:disabled+label::before{
+      background: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="checkbox">
+      <input disabled class="raw" type="checkbox" id="checkbox">
+      <label for="checkbox">Awesome!</label>
+    </div>
+  </div>
+</body>
+
+</html>

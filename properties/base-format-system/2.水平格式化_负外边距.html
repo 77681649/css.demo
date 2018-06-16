@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>水平格式化_负外边距</title>
+  <style>
+    .main {
+      background: springgreen;
+      width: 400px;
+      height: 600px;
+    }
+
+    .main div{
+      background: blueviolet;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>子元素总宽度填充小于父元素宽度时
+  </h1>
+  <div class="main">
+    <div style="margin-left:20px;width:auto;margin-right:-20px;">margin-right:-20px 超出右边界</div>
+    <div style="margin-left:-20px;width:auto;margin-right:20px;">margin-left:-20px 超出左边界</div>
+    <div style="margin-left:-20px;width:auto;margin-right:-20px;">margin-left:-20px;margin-right:-20px 超出两个边界</div>
+    <div style="margin-left:-20px;width:200px;margin-right:-20px;">margin-left:-20px 超出左边界</div>
+  </div>
+</body>
+
+</html>

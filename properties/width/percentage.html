@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>width: percentage</title>
+  <link rel="stylesheet" href="/main.css">
+  <style>
+    .container {
+      width: 720px;
+      background: silver;
+      margin: 0 10px;
+    }
+
+    .block {
+      padding: 0 10px;
+      /* padding: 0 10px; */
+      height: 100px;
+
+      background: cadetblue;
+      color: white;
+
+      font-size: 24px;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="block">position:static/relative; width:auto;</div>
+    </div>
+
+    <div class="container">
+      <div class="block" style="width:100%">position:static/relative; width:100%;(超过父容器)</div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo.font.weight</title>
+  <style>
+    .main {
+      font-family: 'Times New Roman', Times, serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main" class="main">
+  </div>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const main = document.getElementById('main')
+    const fragment = document.createDocumentFragment()
+    const data = [
+      'xx-small',
+      'x-small',
+      'small',
+      'medium',
+      'large',
+      'x-large',
+      'xx-large',
+      'smaller',
+      'larger',
+      '80%',
+      '100%',
+      '200%'
+    ]
+
+    data.forEach(it => {
+      const div = document.createElement("DIV")
+
+      div.style.fontSize = it
+      div.innerText = `字体的 font-size 为 "${it}"`
+
+      fragment.appendChild(div)
+    })
+
+    main.appendChild(fragment)
+  })
+</script>
+
+</html>

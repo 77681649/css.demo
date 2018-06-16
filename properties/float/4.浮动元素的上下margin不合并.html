@@ -1,0 +1,25 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1.浮动元素的上下margin不合并</title>
+  <style>
+    .block {
+      width: 200px;
+      height: 200px;
+
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>浮动元素与浮动元素 , 浮动元素与非浮动元素之间的margin-top,margin-bottom不会重叠</h1>
+  <div class="block" style="background:green">block A</div>
+  <div class="block" style="background:blue;float:left;width:4000px; ">block B</div>
+  <div class="block" style="background:red;float:left;">block C</div>
+</body>
+
+</html>

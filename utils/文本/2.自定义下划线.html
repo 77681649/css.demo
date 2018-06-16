@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义下划线</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .main {
+      font-size: 16px;
+    }
+
+    .normal-underline {
+      text-decoration: underline
+    }
+
+    .custom-underline {
+      text-decoration: none;
+      /* background-image: linear-gradient(to right,gray 70%, transparent 0);
+      background-origin: content-box;
+      background-position: 0 16px;
+      background-size: 6px 2px;
+      background-repeat: repeat-x; */
+      /* 模拟下划线 */
+      background: linear-gradient(to right, gray 100%, gray 0) no-repeat 0 17px / 100% 1px;
+
+      /* 利用文字阴影会覆盖背景图片的特性 , 用白色覆盖掉背景 , 实现下划线遇到字母时自动断开 */
+      text-shadow: 1px 0 white, -1px 0 white;
+    }
+
+    .level {
+      width: 200px;
+      height: 60px;
+      background-color: red;
+
+      color: white;
+      line-height: 60px;
+      text-align: center;
+      text-shadow: 0px 17px blue;
+
+      box-shadow: 0px -30px 10px gray inset;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    The only way to
+    <span class="normal-underline">get rid of a tempatation is to</span> yield to it.
+  </div>
+
+  <div class="main">
+    The only way to
+    <span class="custom-underline">get rid of a tempatation is to</span> yield to it.
+  </div>
+
+  <div class="level">
+    level
+  </div>
+</body>
+
+</html>

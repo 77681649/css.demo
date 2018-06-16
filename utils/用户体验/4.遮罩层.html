@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>遮罩层</title>
+
+  <style>
+    .overley {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgb(0, 0, 0, .8);
+    }
+
+    .lightbox {
+      z-index: 1;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 200px;
+      background: white;
+      text-align: center;
+      line-height: 200px;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0px 999px rgb(0, 0, 0, .8);
+    }
+
+    .overley::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgb(0, 0, 0, .5);
+
+    }
+  </style>
+</head>
+
+<!-- <body class="overley"> -->
+
+<body>
+  1231231
+  <!-- <div class="overley">
+  </div>
+  <div class="lightbox">
+    Hello CSS.
+  </div> -->
+
+  <div class="lightbox">
+    Hello CSS.
+  </div>
+</body>
+
+</html>

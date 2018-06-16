@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3.半透明的边框</title>
+  <link rel="stylesheet" href="/main.css">
+  <script src="/zepto.js"></script>
+  <style>
+    .main {
+
+      position: relative;
+      background: green;
+      width: 100%;
+      height: 400px;
+
+    }
+
+    .block {
+
+      position: relative;
+      width: 200px;
+      background: white;
+    }
+
+    .transparent-border {
+      border: solid 6px hsla(0, 0%, 100%, .3);
+      background-clip: padding-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg">
+    <ul>
+      <li>半透明的边框:</li>
+      <li>border使用背景色 + background-clip:padding-box , 避免背景色干扰</li>
+    </ul>
+    <div class="main">
+      <div class="block hv-center-use-trans transparent-border">Can I haz semi-transparent borders Pretty please?</div>
+    </div>
+  </div>
+</body>
+
+</html>
